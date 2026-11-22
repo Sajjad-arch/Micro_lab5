@@ -11,20 +11,19 @@ main proc
   mov ds, ax
   
    
-   mov cx, 65  ;global condition
-   mid:  ;outer loop  line count 
-   mov bx,  cx
+   mov bx, 65  ;global condition
+   mid:  ;outer loop  line count
+   
+   mov cx, 7 
    
    
-   
-   mov cx, 7
    final:         ;inner lioop char count
    ;bl = ascii input
    mov dl, bl
    mov ah, 2
    int 21h
    inc bl
-   cmp bl, 90
+   cmp bl, 91
    je left ; jump if equal
    ;else
    loop final
@@ -35,13 +34,12 @@ main proc
    int 21h
    mov dl, 10                       
    int 21h
-   mov cx, bx  ;line counter
-   loop mid 
+   jmp mid                               
    
    
    
   
-  left :
+  left:
   mov ah, 4ch
   int 21h
   
