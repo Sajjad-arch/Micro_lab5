@@ -33,7 +33,7 @@ main proc
    mov ah, 2
    mov dl, 13
    int 21h
-   mov dl, 10                       A
+   mov dl, 10                       
    int 21h
    mov cx, bx  ;line counter
    loop mid 
